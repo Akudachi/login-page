@@ -1,0 +1,22 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.otp-section {
+    display: none;
+    margin-top: 15px;
+}
+.timer {
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+    text-align: center;
+}
+.disabled {
+    background-color: #ccc !important;
+    cursor: not-allowed;
+}

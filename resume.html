@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Resume</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+<div class="resume-container">
+    <button class="logout-btn" onclick="logout()">Logout</button>
+    <h1>Adarsh K</h1>
+
+    <div class="contact">
+        <p>Email: adarsh@example.com</p>
+        <p>Phone: +91 9876543210</p>
+        <p>Location: India</p>
+    </div>
+
+    <div class="section skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>HTML, CSS, JavaScript</li>
+            <li>Python & C Programming</li>
+            <li>Database Management</li>
+            <li>Microcontroller Programming (8051, Arduino)</li>
+        </ul>
+    </div>
+
+    <div class="section experience">
+        <h2>Experience</h2>
+        <ul>
+            <li><strong>Web Developer Intern</strong> - XYZ Company (2024)  
+                Developed responsive websites and handled backend APIs.</li>
+            <li><strong>IoT Project Developer</strong> - College Project (2023)  
+                Created an IoT-based automation system using Arduino and sensors.</li>
+        </ul>
+    </div>
+
+    <div class="section education">
+        <h2>Education</h2>
+        <ul>
+            <li><strong>B.Tech in Electronics & Communication</strong> - ABC University (2021-2025)</li>
+            <li><strong>Higher Secondary Education</strong> - XYZ School (2019-2021)</li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    if (localStorage.getItem("isLoggedIn") !== "true") {
+        window.location.href = "ak.html";
+    }
+
+    function logout() {
+        localStorage.removeItem("isLoggedIn");
+        window.location.href = "ak.html";
+    }
+</script>
+
+</body>
+</html>

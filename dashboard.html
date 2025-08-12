@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Resume</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h3>ADARSH KUDACHI</h3>
+    <br>
+    <p><b>Email:</b> 00adarsh.kudachi00@gmail.com 
+        <br>
+        <br>
+        <b>Phone:</b> +917829606988</p>
+    <br>
+
+    <h3>Education</h3>
+    <p>B.Tech in electronics and communication - KLECET</p>
+
+    <h3>Experience</h3>
+    <p>Software Developer Intern at ABC Company</p>
+
+    <h3>Skills</h3>
+    <ul>
+        <li>HTML, CSS</li>
+        <li>Python,c++</li>
+      
+    </ul>
+    <br>
+
+    <button onclick="logout()">Logout</button>
+</div>
+
+<script>
+    // Protect page: redirect if not logged in
+    if (localStorage.getItem("isLoggedIn") !== "true") {
+        window.location.href = "ak.html";
+    }
+
+    function logout() {
+        localStorage.removeItem("isLoggedIn");
+        window.location.href = "ak.html";
+    }
+</script>
+
+</body>
+</html>

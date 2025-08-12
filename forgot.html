@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="login-container">
+    <h2>Forgot Password</h2>
+    <form id="forgotForm">
+        <!-- Phone Number -->
+        <div class="input-group">
+            <label for="phone">Enter your phone number</label>
+            <input type="tel" id="phone" name="phone" placeholder="e.g. 9876543210" required>
+        </div>
+
+        <!-- OTP Section (hidden initially) -->
+        <div class="input-group" id="otpSection" style="display: none;">
+            <label for="otp">Enter OTP</label>
+            <input type="text" id="otp" name="otp" placeholder="Enter OTP" required>
+        </div>
+
+        <button type="button" id="sendOtpBtn">Send OTP</button>
+        <button type="submit" id="verifyOtpBtn" style="display: none;">Verify OTP</button>
+        <br>
+        <br>
+        <p class="signup-text"><a href="ak.html">Back to Login</a></p>
+    </form>
+</div>
+
+<script>
+    const sendOtpBtn = document.getElementById('sendOtpBtn');
+    const verifyOtpBtn = document.getElementById('verifyOtpBtn');
+    const otpSection = document.getElementById('otpSection');
+
+    sendOtpBtn.addEventListener('click', function() {
+        const phone = document.getElementById('phone').value;
+        if (phone.length < 10) {
+            alert("Please enter a valid phone number");
+            return;
+        }
+        
+        // Simulate sending OTP (Replace with backend API call)
+        alert("OTP sent to " + phone);
+
+        // Show OTP field & Verify button
+        otpSection.style.display = "block";
+        sendOtpBtn.style.display = "none";
+        verifyOtpBtn.style.display = "inline-block";
+    });
+
+    document.getElementById('forgotForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const otp = document.getElementById('otp').value;
+        if (otp === "1234") { // Simulated OTP check
+            alert("OTP Verified! Redirecting to reset password page...");
+            window.location.href = "reset.html"; // Make this page for password reset
+        } else {
+            alert("Invalid OTP, please try again.");
+        }
+    });
+</script>
+
+</body>
+</html>
